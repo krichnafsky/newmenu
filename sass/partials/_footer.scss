@@ -1,0 +1,33 @@
+.site-footer {
+  font-size: .95em;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  color: $white;
+  padding: 7px 10px;
+  background-color: mix($topbarBackgroundHighlight, $topbarBackground, 62.5%);
+  @include box-shadow(0 1px 4px rgba(0,0,0,.065));
+  // Prevent floats from breaking the navbar
+  @include clearfix();
+  & p {
+    margin: 0;
+  }
+  & a {
+    color: $white;
+  }
+}
+
+/* IE 6 */
+* html .site-footer {
+  position:fixed;
+  top:expression((0-(site-footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+.site-footer-links {
+  font-size: .95em;
+  margin-right: 2%;
+  margin: 0 auto;
+  & li {
+    display: inline;
+  }
+}

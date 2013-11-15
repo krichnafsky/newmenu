@@ -1,0 +1,45 @@
+input, select {
+  width: auto;
+}
+
+.message {
+  width: columns(10);
+}
+
+// Search row
+.search-row {
+  margin-bottom: .9em;
+  label {
+    width: columns(10);
+  }
+  input, select {
+    width: columns(10);
+  }
+  .search-criteria {
+    width: columns(10);
+    margin-top: .25em;
+  }
+  @media screen and (min-width: emCalc(600px)) {
+    margin-bottom: .25em;
+    label {
+      width: columns(3);
+      text-align: right;
+      padding-top: .25em;
+    }
+    input {
+      width: columns(4);
+    }
+    select {
+      width: auto;
+    }
+    .search-criteria {
+      width: columns(3);
+      margin-top: 0;
+    }
+  }
+}
+
+//for the first table column in dataTable lets center the icons for desktop layout
+.dataTable td:first-child {
+  text-align: center;
+}

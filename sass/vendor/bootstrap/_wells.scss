@@ -1,0 +1,48 @@
+
+// Base class
+.well {
+  min-height: 20px;
+  padding: 5px; //start off with small padding, increase to 19px on tablet mode
+  margin-bottom: 20px; //mod by keith from 40px;
+  @media screen and (min-width: $small-to-medium-screen) {
+    padding: 19px; //19px 19px 0px 19px;
+  }
+  background-color: darken($wellBackground, 1%);
+  border: 1px solid darken($wellBackground, 10%);
+  @include border-radius($baseBorderRadius);
+  // @include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
+  blockquote {
+    border-color: #ddd;
+    border-color: rgba(0,0,0,.15);
+  }
+}
+
+.shrink-well {
+  min-height: 20px;
+  padding: 5px;
+  margin-bottom: 4px;
+  background-color: darken($wellBackground, 3%);
+  border: 1px solid darken($wellBackground, 10%);
+  @include border-radius($baseBorderRadius);
+  // @include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
+}
+
+.inner-well {
+  background-color: $wellInnerBackground;
+  margin-bottom: 15px;
+}
+
+.inner-well-colored {
+  background-color: darken($wellInnerBackground, 2%);
+  margin-bottom: 15px;
+}
+
+// Sizes
+.well-large {
+  padding: 24px;
+  @include border-radius($borderRadiusLarge);
+}
+.well-small {
+  padding: 9px;
+  @include border-radius($borderRadiusSmall);
+}

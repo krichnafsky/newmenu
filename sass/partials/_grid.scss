@@ -1,0 +1,78 @@
+// flexible grid functions modified from Bourbon by thoughtbot, inc ============================== /
+// http://thoughtbot.com/bourbon/#flex-grid ====================================================== /
+
+$max-width:       1000px; // set page max-width
+$column-width:    9%;    // set column width
+$gutter-width:    1.099999%;     // set gutter width
+$maximum-columns: 10;      // set max number of columns
+
+@function columns($columns, $container-columns: $maximum-columns) {
+  $width: $columns * $column-width + ($columns - 1) * $gutter-width;
+  $container-width: $container-columns * $column-width + ($container-columns - 1) * $gutter-width;
+  @return percentage($width / $container-width);
+}
+
+@function gutter($container-columns: $maximum-columns, $gutter: $gutter-width) {
+  $container-width: $container-columns * $column-width + ($container-columns - 1) * $gutter-width;
+  @return percentage($gutter / $container-width);
+}
+
+// row mixin includes clearfix hack, last-child margin fix and any global row styles ============= /
+@mixin row {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  @include clearfix;
+  @include nesting;
+}
+
+// target nested elements with grid styles. use in global styles as well as row mixin ============ /
+@mixin nesting {
+  padding: 0; // remove padding from parent container so floated columns can fill it
+
+  & > div, & > section, & > footer, & > p, & > ul,
+  & > table, & > button, & > label, & > aside,
+  & > fieldset, & > input, & > select { // target only child elements of the container. add elements other than div as needed
+    float: left;
+    margin-right: gutter();
+    @include box-sizing(border-box);
+  }
+  & > input, & > select {
+    // float: left;
+    // margin-right: gutter();
+    // @include box-sizing(border-box);
+    height: 2.3em;
+  }
+  & > input[type="checkbox"] {
+    height: auto;
+  }
+}
+
+// calculate offset amounts for offset columns =================================================== /
+@function offset-columns($columns) {
+  $margin: $columns * $column-width + $columns * $gutter-width;
+  @return $margin;
+}
+
+@mixin offset($from-direction, $columns) {
+  @if $from-direction == left {
+    float: left;
+    margin-left: offset-columns($columns);
+  }
+  @if $from-direction == right {
+    float: right;
+    margin-right: offset-columns($columns);
+  }
+}
+
+// remove margin-right from last element in a row or container so all columns fit ================ /
+@mixin last {
+  margin-right: 0;
+  float: right; // fixes poor alignment with right edge caused by percentage calculations
+}
+
+// added by keith to help with responsive behaviors
+@mixin remove-last {
+  float: left;
+  margin-right: gutter();
+}

@@ -1,0 +1,86 @@
+@media screen and (max-width: emCalc(960px)) {
+  // responsive table
+  table {
+    @include trailing-border;
+    border: 0;
+    padding-bottom: 0;
+    display: block;
+    width: 100%;
+  }
+  caption {
+    display: block;
+  }
+  thead {
+    display: none;
+    visibility: hidden;
+  }
+  tbody, tr, th, td {
+    border: 0 !important;
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  tr {
+    @include leader;
+  }
+  tr:first-child {
+    margin-top: 0;
+  }
+  th[data-title]:before,
+    td[data-title]:before {
+    content: attr(data-title) ":\00A0";
+    font-weight: bold;
+  }
+  th:not([data-title]) {
+    font-weight: bold;
+  }
+  td:empty {
+    display: none;
+  }
+  .dataTable td:last-child {
+    text-align: left;
+  }
+
+  // jQuery dataTables classses
+  .dataTables_wrapper {
+    .dataTables-row {
+      @include row;
+      .dataTables-half-left {
+        width: columns(10);
+      }
+      .dataTables-half-right {
+        width: columns(10);
+      }
+    }
+  }
+
+  .dataTables_filter {
+    label {
+      text-align: left;
+      > input {
+        width: 75%;
+      }
+    }
+  }
+
+  .dataTables_info {
+    margin-top: .25em;
+  }
+
+  .dataTables_paginate {
+    a {
+      float: left;
+    }
+  }
+
+  .paging_full_numbers {
+    a.first {
+      border-left-width: 1px;
+      @include border-left-radius(4px);
+    }
+    a.last {
+      @include border-right-radius(4px);
+    }
+  }
+}
