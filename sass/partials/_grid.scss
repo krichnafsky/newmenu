@@ -1,3 +1,4 @@
+// ******************************************
 // flexible grid functions modified from Bourbon by thoughtbot, inc ============================== /
 // http://thoughtbot.com/bourbon/#flex-grid ====================================================== /
 
@@ -76,3 +77,80 @@ $maximum-columns: 10;      // set max number of columns
   float: left;
   margin-right: gutter();
 }
+
+
+// ******************************************
+/*
+    Developers have the option to utilize predefined column widths below.  Make sure first to make the containing
+    element be a row before using predefined columns
+
+    For example:
+      <div class="row">
+        <div class="col5">Column A</div>
+        <div class="col5">Column B</div>
+      </div>
+ */
+
+.row {
+  @include row();
+}
+
+// General classes for quick sizes
+.col1 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(1);
+  }
+}
+.col2 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(2);
+  }
+}
+.col3 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(3);
+  }
+}
+.col4 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(4);
+  }
+}
+.col5 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(5);
+  }
+}
+.col6 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(6);
+  }
+}
+.col7 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(7);
+  }
+}
+.col8 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(8);
+  }
+}
+.col9 {
+  width: columns(10);
+  @media screen and (min-width: 43.75em){
+    width: columns(9);
+  }
+}
+.col10 {
+  width: columns(10);
+}
+

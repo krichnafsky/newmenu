@@ -1,4 +1,6 @@
+// ******************************************
 // jQuery dataTables classses
+
 .dataTables_wrapper {
   padding: .5em;
   // border: 1px solid #C3C8CB;
@@ -41,7 +43,7 @@
     display: inline-block;
     padding: .25em .5em;
     text-decoration: none;
-    background-color: #ffffff;
+    background-color: $white;
     border: 1px solid #dddddd;
     border-left-width: 0;
     font-size: .75em;
@@ -58,11 +60,11 @@
   }
   a.paginate_active {
     background-color: #f5f5f5;
-    color: #999999;
+    color: $grayLight;
     cursor: default;
   }
   a.paginate_button_disabled {
-    color: #999999;
+    color: $grayLight;
     cursor: default;
     background-color: transparent;
   }
@@ -103,5 +105,102 @@ table.dataTable {
     cursor: pointer;
     *cursor: hand;
     background: url('../img/sort_desc_disabled.png') no-repeat center right;
+  }
+}
+
+@media screen and (max-width: emCalc($small-screen)) {
+  table {
+    @include trailing-border;
+    border: 0;
+    padding-bottom: 0;
+    display: block;
+    width: 100%;
+  }
+  caption {
+    display: block;
+  }
+  thead {
+    display: none;
+    visibility: hidden;
+  }
+  tbody, tr, th, td {
+    border: 0 !important;
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal;
+  }
+  tr {
+    @include leader;
+  }
+  tr:first-child {
+    margin-top: 0;
+  }
+  th[data-title]:before,
+    td[data-title]:before {
+    content: attr(data-title) ":\00A0";
+    font-weight: bold;
+  }
+  th:not([data-title]) {
+    font-weight: bold;
+  }
+  td:empty {
+    display: none;
+  }
+
+  // jQuery dataTables classses
+  .dataTables_length {
+    label > select {
+      margin-right: 0;
+    }
+  }
+
+  .dataTables_paginate {
+    a {
+      float: left;
+    }
+  }
+
+  .paging_full_numbers {
+    a.previous {
+      @include border-right-radius(4px);
+    }
+    a.next {
+      border-left-width: 1px;
+      @include border-left-radius(4px);
+    }
+    span {
+      margin-top: .25em;
+      width: 100%;
+      display: inline-block;
+    }
+    span a:first-child {
+      border-left-width: 1px;
+      @include border-left-radius(4px);
+    }
+    span a:last-child {
+      @include border-right-radius(4px);
+    }
+  }
+}
+
+@media screen and (max-width: emCalc($small-to-medium-screen)) {
+  // jQuery dataTables classses
+  .dataTables_wrapper {
+    .dataTables-row {
+      @include row;
+      .dataTables-half-left {
+        width: columns(4);
+      }
+      .dataTables-half-right {
+        width: columns(6);
+        text-align: right;
+        @include last;
+      }
+    }
+  }
+
+  .dataTables_info {
+    margin-top: .625em;
   }
 }

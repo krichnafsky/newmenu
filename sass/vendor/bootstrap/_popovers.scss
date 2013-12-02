@@ -71,6 +71,12 @@
   content: "";
 }
 
+.popover .line {
+  position: absolute;
+  display: block;
+  background-color: $popoverBackground;
+}
+
 .popover {
   &.top .arrow {
     left: 50%;
@@ -130,4 +136,16 @@
     }
   }
 
+  &.top .line {
+    width: $popoverArrowWidth - 4;
+  }
+  &.right .line {
+    height: $popoverArrowWidth - 4;
+  }
+  &.bottom .line {
+    width: $popoverArrowWidth - 4;
+  }
+  &.left .line {
+    height: $popoverArrowWidth - 4;
+  }
 }

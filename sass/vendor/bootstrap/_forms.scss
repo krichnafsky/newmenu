@@ -523,8 +523,8 @@ select:focus:required:invalid {
     @include border-radius(0);
   }
   .active {
-    background-color: lighten($green, 30);
-    border-color: $green;
+    background-color: lighten($flat-green, 30);
+    border-color: $flat-green;
   }
 }
 

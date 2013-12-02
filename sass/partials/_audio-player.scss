@@ -1,0 +1,167 @@
+// ******************************************
+// Styling for audio player
+
+.audioPlayer {
+  border: 1px #ededed outset;
+  display: inline-block;
+  width: 300px;
+  height: 45px;
+}
+
+.audioPlayerControls {
+  margin: 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.audioPlayerPlayPause, .audioPlayerReload, .audioPlayerVolume, .audioPlayerVolumeButton {
+  display: inline-block;
+  float: left;
+  margin: .8em .2em;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  overflow: hidden;
+  a {
+	  font-family: 'icon-font';
+	  font-size: 1.5em;
+	  font-style: normal;
+	  font-weight: normal;
+    display: inline-block;
+    width: auto;
+	  text-align: center;
+	  cursor: pointer;
+	  span {
+	    height: 0;
+	    width: 0;
+      font-size: 0;
+      line-height: 0;
+      color: transparent;
+	  }
+  }
+}
+
+.audioPlayerLoading .audioPlayerPlayPause a:before {
+  content: '\e805' !important;
+}
+
+.audioPlayerLoading .audioPlayerPlayPause a {
+  cursor: default !important;
+}
+
+.audioPlayerStopped .audioPlayerPlayPause a:before {
+  content: '\e800';
+}
+
+.audioPlayerStopped .audioPlayerPlayPause a {
+  cursor: pointer;
+}
+
+.audioPlayerPlaying .audioPlayerPlayPause a:before {
+  content: '\e80d';
+}
+
+.audioPlayerPlaying .audioPlayerPlayPause a {
+  cursor: pointer;
+}
+
+.audioPlayerTime {
+  display: inline-block;
+  float: left;
+  margin: .8em 0;
+  text-align: center;
+}
+
+.audioPlayerBar {
+  display: inline-block;
+  float: left;
+  margin: .8em .2em;
+  width: 9.8em;
+  height: 1.5em;
+  border: 1px #ededed inset;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.audioPlayerNoVolume .audioPlayerBar {
+  width: 11.8em;
+}
+
+.audioPlayerNoVolume .audioPlayerVolume {
+  display: none;
+}
+
+.audioPlayerBar {
+	div {
+    display: inline-block;
+    left: 0;
+    width: 0;
+    height: 100%;
+    position: relative;
+  }
+  .audioPlayerBarLoaded {
+    background-color: #d9edf7;
+    z-index: $zindexAudioPlayerBarLoaded;
+  }
+  .audioPlayerBarPlayed {
+    background-color: #08c;
+    top: -1.7em;
+    z-index: $zindexAudioPlayerBarPlayed;
+  }
+}
+
+.audioPlayerReload a:before {
+  content: '\e80f';
+}
+
+.audioPlayerVolume {
+  overflow: inherit;
+}
+
+.audioPlayerVolumeButton {
+  margin: 0;
+}
+
+.audioPlayer:not(.audioPlayerMuted) .audioPlayerVolumeButton a:before {
+  content: '\e813';
+}
+
+.audioPlayer.audioPlayerMuted .audioPlayerVolumeButton a:before {
+  content: '\e812';
+}
+
+.audioPlayerVolume:hover .audioPlayerVolumeAdjust {
+  display: inline-block;
+}
+
+.audioPlayerVolumeAdjust {
+  display: none;
+  height: 6.75em;
+  width: 1.5em;
+  position: relative;
+  top: -8.35em;
+  border: 1px #ededed outset;
+  cursor: default;
+}
+
+.audioPlayerVolumeAdjuster {
+  display: inline-block;
+	border: 1px #ededed inset;
+  width: 1em;
+  height: 6.25em;
+  background-color: #d9edf7;
+  cursor: pointer;
+  position: relative;
+  z-index: zindexAudioPlayerVolumeAdjuster;
+  margin: .2em;
+}
+
+.audioPlayerVolumeBar {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #08c;
+}

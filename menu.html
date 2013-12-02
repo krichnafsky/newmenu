@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 9]>  <html lang="en" class="ie">     <![endif]-->
+<!--[if !IE]><!--> <html lang="en">    <!--<![endif]-->
 	<head>
 		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 		<meta name="author" content="Sherwin-Williams"/>
 		<meta name="robots" content="noindex,nofollow,nosnippet,noarchive,noimageindex"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
@@ -12,23 +13,28 @@
 		<meta http-equiv="Expires" content="0"/>
 		<meta http-equiv="cleartype" content="on"/>
 		<title>Menu</title>
-		<link href="/css/menu.css" rel="stylesheet"/>
-		<script src="/js/modernizr-2.6.2-min.js"></script>
+		<link href="/css/base.css" rel="stylesheet"/>
+		<!--[if lt IE 9]>
+			<link href="/css/baseIE8.css" rel="stylesheet"/>
+		<![endif]-->
+		<script src="/js/modernizr-2.7.0-min.js"></script>
 	</head>
 	<body>
 		<section role="main">
 			<header role="header">
-				<nav class="top-bar " role="navigation">
-			    <div class="title-area name">
-						<i class="icon-menu show-for-medium-down" title="Click to access menu"></i> <!-- show-for-large-down -->
-			    	<h1><a href="#" class="logo" title="Sherwin-Williams"><img src="/img/bg-logo.png" alt="S-W Logo" /></a></h1>
-			    </div>
+				<nav class="top-bar " role="navigation" data-topbar="" data-options="is_hover: true">
+			    <ul class="title-area">
+			    	<li><span class="icon-fix"><i class="icon-menu show-for-large-down" title="Click to access menu"></i></span></li>
+						<li class="name">
+							<h1><a href="#" class="logo" title="Sherwin-Williams"><img src="/img/bg-logo.png" alt="S-W Logo" /></a></h1>
+						</li>
+			    </ul>
 			    <section class="top-bar-section">
 			      <ul id="nav-top-bar-control" class="right">
-						  <li class="divider"></li>
-						  <li class="has-dropdown">
-						    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-docs"></i>Documents</a>
+						  <li class="divider hide-for-large-down"></li>
+						  <li class="has-dropdown"><a href="#" class="heading" ><span class="icon-fix"><i class="icon-docs"></i></span>Documents</a>
 						    <ul class="dropdown">
+			            <li class="divider"></li>
 			            <li><a href="#">Document Finder</a></li>
 			            <li class="divider"></li>
 			            <li><a href="#">Document Generation</a></li>
@@ -47,9 +53,9 @@
 			          </ul>
 						  </li>
 						  <li class="divider"></li>
-						  <li class="has-dropdown">
-						    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-chart-bar"></i>Reports</a>
+						  <li class="has-dropdown"><a href="#" class="heading" ><span class="icon-fix"><i class="icon-chart-bar"></i></span>Reports</a>
 						    <ul class="dropdown">
+			            <li class="divider"></li>
 							    <li class="empty-label"><label></label></li>
 							    <li class="has-dropdown"><a href="#">Air Toxic Emissions</a>
 							      <ul class="dropdown">
@@ -173,76 +179,75 @@
 							  </ul>
 						  </li>
 						  <li class="divider"></li>
-						  <li class="has-dropdown">
-						      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-info"></i>Inquiry</a>
-							    <ul class="dropdown">
-				            <li><a href="#">Global Product Search</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Products</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Divisional Products</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Intermixes</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Ingredient Consumption</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Formula Production</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">User Lookup</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Servify</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Material Cross Reference</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Chemical Lists</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Material Information</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Formulator Information</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Products Currently Locked</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">FIPS</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">BOL</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Calculated VOC / Vapor Pressure</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Emerald</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Product Pre-Reg Status</a></li>
-				          </ul>
-						  </li>
-						  <li class="divider"></li>
-						  <li class="has-dropdown">
-						      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-edit"></i>Maintenance</a>
-							    <ul class="dropdown">
-				            <li><a href="#">Package Attributes</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Product Data Entry</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">MatEval</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Vendor</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Chemical List Inventory</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Global Raw Material Integration</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">eRMIF</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">RMCC</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">HTC Export Data</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Member Profile Administration</a></li>
-				            <li class="divider"></li>
-				          </ul>
-						  </li>
-						  <li class="divider"></li>
-						  <li class="has-dropdown">
-						    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-install"></i>EMIS</a>
+						  <li class="has-dropdown"><a href="#" class="heading" ><span class="icon-fix"><i class="icon-info"></i></span>Inquiry</a>
 						    <ul class="dropdown">
+			            <li class="divider"></li>
+			            <li><a href="#">Global Product Search</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Products</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Divisional Products</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Intermixes</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Ingredient Consumption</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Formula Production</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">User Lookup</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Servify</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Material Cross Reference</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Chemical Lists</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Material Information</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Formulator Information</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Products Currently Locked</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">FIPS</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">BOL</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Calculated VOC / Vapor Pressure</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Emerald</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Product Pre-Reg Status</a></li>
+			          </ul>
+						  </li>
+						  <li class="divider"></li>
+						  <li class="has-dropdown"><a href="#" class="heading" ><span class="icon-fix"><i class="icon-edit"></i></span>Maintenance</a>
+						    <ul class="dropdown">
+			            <li class="divider"></li>
+			            <li><a href="#">Package Attributes</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Product Data Entry</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">MatEval</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Vendor</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Chemical List Inventory</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Global Raw Material Integration</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">eRMIF</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">RMCC</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">HTC Export Data</a></li>
+							    <li class="divider"></li>
+			            <li><a href="#">Member Profile Administration</a></li>
+			          </ul>
+						  </li>
+						  <li class="divider"></li>
+						  <li class="has-dropdown"><a href="#" class="heading" ><span class="icon-fix"><i class="icon-install"></i></span>EMIS</a>
+						    <ul class="dropdown">
+			            <li class="divider"></li>
 							    <li class="empty-label"><label></label></li>
 							    <li class="has-dropdown"><a href="#">Continuous Applications</a>
 							      <ul class="dropdown">
@@ -274,9 +279,9 @@
 							  </ul>
 						  </li>
 				      <li class="divider"></li>
-							<li class="has-dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-globe"></i>Region</a>
+							<li class="has-dropdown"><a href="#" class="heading" ><span class="icon-fix"><i class="icon-globe"></i></span>Region</a>
 							  <ul class="dropdown">
+			            <li class="divider"></li>
 							    <li class="empty-label"><label></label></li>
 							    <li class="has-dropdown"><a href="#">North America</a>
 							      <ul class="dropdown">
@@ -304,13 +309,13 @@
 							  </ul>
 							</li>
 			        <li class="divider"></li>
-			        <li class="has-dropdown user">
-			        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>User Name</a>
+			        <li class="has-dropdown user"><a href="#" class="heading"><span class="icon-fix"><i class="icon-user"></i></span>User Name</a>
 			          <ul class="dropdown">
+			            <li class="divider"></li>
 			            <li><a href="#">Profile</a></li>
-			            <li class="divider"></li>
+							    <li class="divider"></li>
 			            <li><a href="#">Help</a></li>
-			            <li class="divider"></li>
+							    <li class="divider"></li>
 			            <li><a href="#">Sign Out</a></li>
 			          </ul>
 			        </li>
@@ -320,23 +325,75 @@
 		 	 	</nav>
 			</header>
 			<div class="main-container">
-				<div class="main-content">
-					<section class="breadcrumb">
-						<ul>
-							<li>
-								<a id="menuLink" href="#" title="Select to go back to home page" onfocus="scrollIntoViewBelowHeader($(this));">Home</a>
-								<span class="divider">/</span>
-							</li>
-							<li class="active">Application</li>
-						</ul>
-					</section>
-					<section id="body-content" class="body-content well" role="region" aria-labelledby="heading">
-		      	<h1>D<span>efault</span> Body Content Title</h1>
-		      	<section class="well inner-well">
-		      		Default Main Content
-		      	</section>
-		    	</section>
-				</div>
+				<!-- <section class="breadcrumb">
+					<ul>
+						<li>
+							<a id="menuLink" href="#" title="Select to go back to home page" onfocus="scrollIntoViewBelowHeader($(this));">Home</a>
+							<span class="divider">/</span>
+						</li>
+						<li class="active">Application</li>
+					</ul>
+				</section> -->
+				<section id="body-content" class="body-content well" role="region" aria-labelledby="heading">
+	      	<h2>HEARS on the Web Dashboard</h2>
+	      	<section class="well inner-well">
+	      		<h3>Recent Used Applications</h3>
+	      		<div class="app-tile-row">
+							<ul>
+		            <li class="app-tile flat-blue">
+								  <a href="#">
+							      <span class="icon-fix"><i class="icon-docs"></i></span>
+							      <h4 class="title flat-blue-darken">
+							      	Document Finder
+							      </h4>
+							    </a>
+								</li>
+								<li class="app-tile flat-blue">
+								  <a href="#">
+							      <span class="icon-fix"><i class="icon-docs"></i></span>
+							      <h4 class="title flat-blue-darken">Document Generation</h4>
+							    </a>
+								</li>
+		            <li class="app-tile flat-green">
+								  <a href="#">
+								    <span class="icon-fix"><i class="icon-docs"></i></span>
+								    <h4 class="title flat-green-darken">SARA 313</h4>
+							    </a>
+								</li>
+								<li class="app-tile flat-green">
+								  <a href="#">
+								    <span class="icon-fix"><i class="icon-docs"></i></span>
+								    <h4 class="title flat-green-darken">Waste Reports</h4>
+							    </a>
+								</li>
+		            <li class="app-tile flat-yellow">
+								  <a href="#">
+								    <span class="icon-fix"><i class="icon-docs"></i></span>
+								    <h4 class="title flat-yellow-darken">Global Product Search</h4>
+							    </a>
+								</li>
+								<li class="app-tile flat-yellow">
+								  <a href="#">
+							      <span class="icon-fix"><i class="icon-docs"></i></span>
+							      <h4 class="title flat-yellow-darken">Material Information</h4>
+								  </a>
+								</li>
+		            <li class="app-tile flat-red">
+								  <a href="#">
+							      <span class="icon-fix"><i class="icon-docs"></i></span>
+							      <h4 class="title flat-red-darken">MatEval</h4>
+								  </a>
+								</li>
+								<li class="app-tile flat-red">
+								  <a href="#">
+							      <span class="icon-fix"><i class="icon-docs"></i></span>
+							      <h4 class="title flat-red-darken">Product Data Entry</h4>
+							    </a>
+								</li>
+		          </ul>
+		      	</div>
+	      	</section>
+	    	</section>
 			</div>
 			<footer role="footer">
 				<div class="footer-container">
@@ -361,7 +418,7 @@
 			</footer>
 		</section>
 
-		<div class="sidebar-nav hide-for-large" role="off-canvas"><!--hide-for-xlarge-->
+		<div class="off-canvas-nav" role="off-canvas"><!--hide-for-xlarge-->
 			<ul class="dashboard-menu">
 				<li>
 					<a href="#"><span class="icon-fix"><i class="icon-home"></i></span><span>Home</span></a>
@@ -382,13 +439,13 @@
 				<li id="reports">
 					<a href="#" class="submenu-toggle"><span class="icon-fix"><i class="icon-chart-bar"></i></span><span>Reports</span><i class="icon-down-open toggle"></i></a>
 					<ul class="submenu" style="display: none;">
-           	<li id="air-toxic-emissions"><a href="#" class="inner-submenu-toggle"><span>Air Toxic Emissions</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="air-toxic-emissions"><a href="#" class="inner-submenu-toggle"><span>Air Toxic Emissions</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">State</a></li>
             		<li><a href="#">Federal (HAPS 112)</a></li>
 							</ul>
             </li>
-           	<li id="batch-reports"><a href="#" class="inner-submenu-toggle"><span>Batch Reports</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="batch-reports"><a href="#" class="inner-submenu-toggle"><span>Batch Reports</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Profile</a></li>
             		<li><a href="#">Prorduction Set</a></li>
@@ -399,20 +456,20 @@
             		<li><a href="#">Particulates</a></li>
 							</ul>
             </li>
-           	<li id="continuous-reports"><a href="#" class="inner-submenu-toggle"><span>Continuous Reports</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="continuous-reports"><a href="#" class="inner-submenu-toggle"><span>Continuous Reports</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Configuration</a></li>
             		<li><a href="#">Emissions</a></li>
             		<li><a href="#">Validation</a></li>
 							</ul>
             </li>
-           	<li id="label-reports"><a href="#" class="inner-submenu-toggle"><span>Label Reports</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="label-reports"><a href="#" class="inner-submenu-toggle"><span>Label Reports</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Label Status Report</a></li>
             		<li><a href="#">While You Were Asleep Report</a></li>
 							</ul>
             </li>
-            <li id="reports"><a href="#" class="inner-submenu-toggle"><span>Reports</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+            <li id="reports"><a href="#" class="inner-submenu-toggle"><span>Reports</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Chemical List Reports</a></li>
             		<li><a href="#">General Reports</a></li>
@@ -430,36 +487,36 @@
             		<li><a href="#">Intermix Reports</a></li>
 							</ul>
             </li>
-           	<li id="occupational-health"><a href="#" class="inner-submenu-toggle"><span>Occupational Health</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="occupational-health"><a href="#" class="inner-submenu-toggle"><span>Occupational Health</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">IH Reports</a></li>
 							</ul>
             </li>
-           	<li id="rto"><a href="#" class="inner-submenu-toggle"><span>RTO</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="rto"><a href="#" class="inner-submenu-toggle"><span>RTO</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">RTO Reports</a></li>
 							</ul>
             </li>
-            <li id="sara"><a href="#" class="inner-submenu-toggle"><span>SARA</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+            <li id="sara"><a href="#" class="inner-submenu-toggle"><span>SARA</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">SARA 312</a></li>
             		<li><a href="#">SARA 313</a></li>
 							</ul>
             </li>
-           	<li id="sustainability"><a href="#" class="inner-submenu-toggle"><span>Sustainability</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="sustainability"><a href="#" class="inner-submenu-toggle"><span>Sustainability</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">ECO-MET Feed Reports</a></li>
 							</ul>
             </li>
             <li id="vhf-reports">
-           		<a href="#" class="inner-submenu-toggle"><span>VOC/HAPS/Flash Reports</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           		<a href="#" class="inner-submenu-toggle"><span>VOC/HAPS/Flash Reports</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Volatile Organic Chemicals</a></li>
             		<li><a href="#">Volatile and Non-Volatile HAPS</a></li>
             		<li><a href="#">Product Flash/VOC</a></li>
 							</ul>
             </li>
-           	<li id="waster"><a href="#" class="inner-submenu-toggle"><span>Waste</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="waster"><a href="#" class="inner-submenu-toggle"><span>Waste</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Model Paint Builder</a></li>
 								<li><a href="#">Waste Reports</a></li>
@@ -468,7 +525,7 @@
           </ul>
 				</li>
 				<li id="inquiry-forms">
-					<a href="#" class="submenu-toggle"><span class="icon-fix"><i class="icon-info"></i></span><span>Inquiry Forms</span><span><i class="icon-down-open"></i></span></a>
+					<a href="#" class="submenu-toggle"><span class="icon-fix"><i class="icon-info"></i></span><span>Inquiry Forms</span><i class="icon-down-open"></i></a>
 					<ul class="submenu" style="display: none;">
            	<li><a href="#">Global Product Search</a></li>
             <li><a href="#">Products</a></li>
@@ -492,7 +549,7 @@
           </ul>
 				</li>
 				<li id="maintenance-forms">
-					<a href="#" class="submenu-toggle"><span class="icon-fix"><i class="icon-edit"></i></span><span>Maintenance Forms</span><span><i class="icon-down-open"></i></span></a>
+					<a href="#" class="submenu-toggle"><span class="icon-fix"><i class="icon-edit"></i></span><span>Maintenance Forms</span><i class="icon-down-open"></i></a>
 					<ul class="submenu" style="display: none;">
            	<li><a href="#">Package Attributes</a></li>
            	<li><a href="#">Product Data Entry</a></li>
@@ -507,25 +564,25 @@
           </ul>
 				</li>
 				<li id="emis">
-					<a href="#" class="submenu-toggle"><span class="icon-fix"><i class="icon-install"></i></span><span>EMIS Applications</span><span><i class="icon-down-open"></i></span></a>
+					<a href="#" class="submenu-toggle"><span class="icon-fix"><i class="icon-install"></i></span><span>EMIS Applications</span><i class="icon-down-open"></i></a>
 					<ul class="submenu" style="display: none;">
-           	<li id="continuous-applications"><a href="#" class="inner-submenu-toggle"><span>Continuous Applications</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="continuous-applications"><a href="#" class="inner-submenu-toggle"><span>Continuous Applications</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">ESS Air</a></li>
 							</ul>
             </li>
-           	<li id="batch-applications"><a href="#" class="inner-submenu-toggle"><span>Batch Applications</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="batch-applications"><a href="#" class="inner-submenu-toggle"><span>Batch Applications</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Profile Builder</a></li>
             		<li><a href="#">Prorduction Set Builder</a></li>
 							</ul>
             </li>
-            <li id="waster"><a href="#" class="inner-submenu-toggle"><span>Waste</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+            <li id="waster"><a href="#" class="inner-submenu-toggle"><span>Waste</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">ESS Waster</a></li>
 							</ul>
             </li>
-            <li id="occupational-health"><a href="#" class="inner-submenu-toggle"><span>Occupational Health</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+            <li id="occupational-health"><a href="#" class="inner-submenu-toggle"><span>Occupational Health</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">ESS IH</a></li>
 								<li><a href="#">Session Editor</a></li>
@@ -536,25 +593,25 @@
 				<li id="select-region">
 					<a href="#" class="submenu-toggle"><span class="icon-fix"><i class="icon-globe"></i></span><span>Select a Region</span><i class="icon-down-open toggle"></i></a>
 					<ul class="submenu" style="display: none;">
-           	<li id="north-america"><a href="#" class="inner-submenu-toggle"><span>North America</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+           	<li id="north-america"><a href="#" class="inner-submenu-toggle"><span>North America</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">United States English</a></li>
             		<li><a href="#">Canada French</a></li>
 							</ul>
             </li>
-            <li id="europe"><a href="#" class="inner-submenu-toggle"><span>Europe</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+            <li id="europe"><a href="#" class="inner-submenu-toggle"><span>Europe</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Germany German</a></li>
             		<li><a href="#">Italy Italian</a></li>
 							</ul>
             </li>
-            <li id="south-america"><a href="#" class="inner-submenu-toggle"><span>South America</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+            <li id="south-america"><a href="#" class="inner-submenu-toggle"><span>South America</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">Brazil Portuguese</a></li>
             		<li><a href="#">Chile Spanish</a></li>
 							</ul>
             </li>
-            <li id="asia"><a href="#" class="inner-submenu-toggle"><span>Asia Pacific</span><span class="icon-fix"><i class="icon-down-open inner-icon"></i></span></a>
+            <li id="asia"><a href="#" class="inner-submenu-toggle"><span>Asia Pacific</span><i class="icon-down-open inner-icon"></i></a>
 							<ul class="inner-submenu" style="display: none;">
 								<li><a href="#">China Chinese</a></li>
             		<li><a href="#">Malay</a></li>
@@ -572,11 +629,15 @@
 			</ul>
 		</div>
 
-		<script src="/js/jquery-1.8.2.min.js"></script>		
-		<script src="/js/foundation-4.2.3.js"></script>
-		<script src="/js/foundation.topbar-4.2.3.js"></script>
+		<script src="/js/jquery-1.10.2.min.js"></script>		
+		<!--[if !IE]><!--> 
+		<script src="/js/foundation-5.0.0.js"></script>
+		<script src="/js/foundation.topbar-5.0.0.js"></script>
+		<!--<![endif]-->
 		<!--[if lt IE 9]>
-			<script src="/js/respond-1.1.1-min.js"></script>
+			<script src="/js/foundation-4.2.3.js"></script>
+			<script src="/js/foundation.topbar-4.2.3.js"></script>
+			<script src="/js/respond-1.4.0-min.js"></script>
 			<script src="/js/selectivizr-1.0.2-min.js"></script>
 		<![endif]-->
 		<script type="text/javascript">
@@ -585,13 +646,40 @@
 
 			$(document).foundation();
 
+			$(document).ready(function() {
+				if ($(window).height() < 690) {
+					$('[role="footer"]').css('position', 'relative');
+				}
+
+				//used to progressively enhance
+				if (!$('html').hasClass('ie')) {
+					
+				}
+			});
+
+			$(window).resize(function() {
+				if ($('[role="footer"]').css('position') === 'relative' && $(window).height() > 690) {
+				 	if ($(window).width() < 1080) {
+				 		return false;
+				 	}
+					$('[role="footer"]').css('position', 'fixed');
+				}
+				if (($('[role="footer"]').css('position') === 'fixed' && $(window).height() < 690)) {
+					if ($(window).width() < 1080) {
+					 	$('[role="footer"]').css('position', 'relative');
+					 	return false;
+					}
+					$('[role="footer"]').css('position', 'relative');
+				}
+			});
+
 			$('.icon-menu').click( function(e) {
 				$('body').toggleClass('navopen');
 
 				if (!$('body').hasClass('navopen')) {
-					$('.sidebar-nav').find('.active').removeClass('active');
-					$('.sidebar-nav').find(".submenu").slideUp("fast");
-					$('.sidebar-nav').find(".inner-submenu").slideUp("fast");
+					$('.off-canvas-nav').find('.active').removeClass('active');
+					$('.off-canvas-nav').find(".submenu").slideUp("fast");
+					$('.off-canvas-nav').find(".inner-submenu").slideUp("fast");
 				}
 			});
 
@@ -608,8 +696,6 @@
 			  $previousItem = $item;
 				
 			  $item.toggleClass("active");
-
-				// alterFooterPosition($item);
 
 			  if ($item.hasClass("active")) {
 			    $item.find(".submenu").slideDown("fast");
@@ -640,7 +726,6 @@
 			  		$previousItem.attr('id') !== itemToCheck.attr('id')) {
 					$previousItem.removeClass("active");
 				  $previousItem.find(".submenu").slideUp("fast");
-				  // alterFooterPosition($previousItem);
 				}
 			}
 
@@ -652,16 +737,12 @@
 				}
 			}
 
-			function alterFooterPosition(element) {
-				if (!$('body').hasClass('navopen') && element.find('.submenu').children().length >= 11) {
-					if ($('[role="footer"]').css('position') === 'relative') {
-						$('[role="footer"]').css('position','fixed');
-					} else {
-						$('[role="footer"]').css('position','relative');
-					}
-				}
-			}
-
+			$('.app-tile').mouseenter(function(e) {
+				$(this).addClass('app-tile-effect');
+			})
+			.mouseleave(function(e) {
+				$(this).removeClass('app-tile-effect');
+			});
 		</script>
 	</body>
 </html>

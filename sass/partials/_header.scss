@@ -1,0 +1,62 @@
+// ******************************************
+// Styling for main header menu
+
+header {
+  background: $flat-blue;
+  overflow: visible;
+	height: 58px;
+  i {
+  	margin-top: 12px;
+  	margin-left: 10px;
+  	@media screen and (min-width: $large-screen) {
+			margin-left: 0;
+		}
+		padding-right: 2px;
+  	line-height: 45px;
+  	float: left;
+  	color: #fff;
+  	font-size: 1.4em;
+  	cursor: pointer;
+	}
+
+  // override _top-bar.scss .top-bar.name h1 to force margin-left on everything but large screen to accomidate menu icon
+  h1 {
+  	margin-left: 55px !important;
+		@media screen and (min-width: $large-screen) {
+			margin: 0 !important;
+		}
+		a {
+			padding: 0px !important;
+		}
+  }
+
+	img {
+	  max-width: 225px;
+	  @media screen and (min-width: $large-screen){
+	    max-width: 165px;
+	  }
+	  height: auto;
+	  // @include transition(all .5s ease-in-out);
+	}
+
+	nav {
+	  position: fixed !important;
+	  z-index: $zindexFixedNavbar;
+	  @media screen and (min-width: $small-to-medium-screen) {
+	  	position: relative !important;
+	  }
+
+		.has-dropdown {
+		  .dropdown {
+		    border-right: 1px ridge darken($topbar-bg, 10%);
+		    border-bottom: 2px ridge darken($topbar-bg, 10%);
+		    border-left: 1px ridge darken($topbar-bg, 10%);
+		  }
+		  > ul .dropdown {
+		    margin-top: -1px;
+		    border-top: 1px solid darken($topbar-bg, 10%);
+		    border-right: 1px ridge darken($topbar-bg, 10%);
+		  }
+		}
+	}
+}

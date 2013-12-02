@@ -1,5 +1,5 @@
 //
-// Alerts
+// Alerts v3.0.2.0
 // --------------------------------------------------
 
 
@@ -9,14 +9,21 @@
 .alert {
   padding: 8px 35px 8px 14px;
   margin-bottom: $baseLineHeight;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  background-color: $warningBackground;
-  border: 1px solid $warningBorder;
+  border: 1px solid transparent;
   @include border-radius($baseBorderRadius);
   color: $warningText;
-}
-.alert h4 {
-  margin: 0;
+  h4 {
+    margin: 0;
+    color: inherit;  
+  }
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+  > p + p {
+    margin-top: 5px;
+  }
 }
 
 // Adjust close link position
@@ -32,34 +39,14 @@
 // -------------------------
 
 .alert-success {
-  background-color: $successBackground;
-  border-color: $successBorder;
-  color: $successText;
-}
-.alert-danger,
-.alert-error {
-  background-color: $errorBackground;
-  border-color: $errorBorder;
-  color: $errorText;
+  @include alert-variant($successBackground, $successBorder, $successText);
 }
 .alert-info {
-  background-color: $infoBackground;
-  border-color: $infoBorder;
-  color: $infoText;
+  @include alert-variant($infoBackground, $infoBorder, $infoText);
 }
-
-
-// Block alerts
-// -------------------------
-
-.alert-block {
-  padding-top: 14px;
-  padding-bottom: 14px;
+.alert-warning {
+  @include alert-variant($warningBackground, $warningBorder, $warningText);
 }
-.alert-block > p,
-.alert-block > ul {
-  margin-bottom: 0;
-}
-.alert-block p + p {
-  margin-top: 5px;
+.alert-danger, .alert-error {
+  @include alert-variant($errorBackground, $errorBorder, $errorText);
 }

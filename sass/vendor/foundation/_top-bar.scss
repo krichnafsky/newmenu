@@ -1,7 +1,77 @@
+
 //
 // Top Bar Variables
 //
+
 $include-html-top-bar-classes: $include-html-classes !default;
+
+// Background color for the top bar
+$topbar-bg-color: #111 !default;
+
+$topbar-dropdown-label-bg: $flat-blue !default;
+$topbar-arrows: true !default; //Set false to remove the triangle icon from the menu item
+
+// Background color for the top bar
+$topbar-bg: $flat-blue;
+
+// Height and margin
+$topbar-height: 45px;
+$topbar-margin-bottom: emCalc(30px);
+
+// Control Input height for top bar
+$topbar-input-height: 2.45em;
+
+// Controlling the styles for the title in the top bar
+$topbar-title-weight: bold;
+$topbar-title-font-size: emCalc(17px);
+$topbar-font-size: $em-base;
+
+// Style the top bar dropdown elements
+$topbar-dropdown-bg: $flat-blue; 
+$topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-bg: $flat-blue;
+$topbar-dropdown-toggle-size: 5px;
+$topbar-dropdown-toggle-color: $white;
+
+// Set the link colors and styles for top-level nav
+$topbar-link-color: $white;
+$topbar-link-color-hover: $white;
+$topbar-link-color-active: $white;
+$topbar-link-weight: bold;
+$topbar-link-font-size: emCalc(13px);
+$topbar-link-bg-hover: darken($topbar-bg, 3%);
+$topbar-link-bg-active: darken($topbar-bg, 3%);
+
+$topbar-dropdown-label-color: $gray;
+$topbar-dropdown-label-text-transform: uppercase;
+$topbar-dropdown-label-font-weight: bold;
+$topbar-dropdown-label-font-size: emCalc(10px);
+
+// Top menu icon styles
+$topbar-menu-link-transform: uppercase;
+$topbar-menu-link-font-size: emCalc(13px);
+$topbar-menu-link-weight: bold;
+$topbar-menu-link-color: $white;
+$topbar-menu-icon-color: $white;
+$topbar-menu-link-color-toggled: #ddd;
+$topbar-menu-icon-color-toggled: #ddd;
+
+// Transitions and breakpoint styles
+$topbar-transition-speed: 300ms;
+$topbar-breakpoint: $large-screen; //940px); // Change to 9999px for always mobile layout
+$topbar-media-query: "only screen and (min-width: #{$topbar-breakpoint})";
+
+// Divider Styles
+$topbar-divider-border-bottom: solid 1px lighten($topbar-bg, 10%);
+$topbar-divider-border-top: solid 1px darken($topbar-bg, 10%);
+
+// Used to provide media query values for javascript components.
+// This class is generated despite the value of $include-html-top-bar-classes
+// to ensure width calculations work correctly.
+meta.foundation-mq-topbar {
+  font-family: $topbar-media-query;
+  width: $topbar-breakpoint;
+}
 
 @if $include-html-top-bar-classes != false {
 
@@ -10,7 +80,7 @@ $include-html-top-bar-classes: $include-html-classes !default;
     width: 100%;
     background: $topbar-bg;
 
-    .top-bar { margin-bottom: 0; }
+    .top-bar { margin-bottom: $topbar-margin-bottom; }
   }
 
   // Wrapped around .top-bar to make it stick to the top
@@ -20,6 +90,24 @@ $include-html-top-bar-classes: $include-html-classes !default;
     position: fixed;
     top: 0;
     z-index: 99;
+
+    &.expanded:not(.top-bar) {
+        overflow-y: auto;
+        height: auto;
+        width: 100%;
+        max-height: 100%;
+
+      .title-area {
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+      }
+      // Ensure you can scroll the menu on small screens
+      .top-bar-section {
+        z-index: 98;
+        margin-top: $topbar-height;
+      }
+    }
   }
 
   .top-bar {
@@ -49,7 +137,6 @@ $include-html-top-bar-classes: $include-html-classes !default;
     .title-area {
       position: relative;
       margin: 0;
-      display: inline-block;
     }
 
     .name {
@@ -74,6 +161,7 @@ $include-html-top-bar-classes: $include-html-classes !default;
     // Menu toggle button on small devices
     .toggle-topbar {
       position: absolute;
+      #{$opposite-direction}: 0;
       top: 0;
 
       a {
@@ -91,8 +179,10 @@ $include-html-top-bar-classes: $include-html-classes !default;
       // Adding the class "menu-icon" will add the 3-line icon people love and adore.
       &.menu-icon {
         #{$opposite-direction}: $topbar-height / 3;
+        top: 50%;
+        margin-top: -16px;
         padding-#{$default-float}: 40px;
-        padding-top: 5px;
+
         a {
           text-indent: -48px;
           width: 34px;
@@ -119,37 +209,13 @@ $include-html-top-bar-classes: $include-html-classes !default;
           }
         }
       }
-      // Added by Keith
-      &.app-menu-icon {
-        #{$opposite-direction}: 80px;
-        padding-#{$default-float}: 40px;
-        padding-top: 5px;
-        a {
-          text-indent: -48px;
-          width: 34px;
-          height: 34px;
-          line-height: 33px;
-          padding: 0;
-          color: $topbar-menu-link-color;
-          span {
-            margin-right: 40px;
-          }
-          i {
-            margin-right: -20px;
-          }
-          span, i {
-            position: absolute;
-            #{$opposite-direction}: 0;
-          }
-        }
-      }
     }
 
     // Change things up when the top-bar is expanded
     &.expanded {
       height: auto;
-      overflow: visible;
-
+      background: transparent;
+  
       .title-area { background: $topbar-bg; }
 
       .toggle-topbar {
@@ -171,35 +237,19 @@ $include-html-top-bar-classes: $include-html-classes !default;
 
   }
 
-  // Navigation that is before the toggle
-	.topbar-before {
-    position: absolute;
-    #{$opposite-direction}: $topbar-height * 2;
-	}
-
-  // Right and Left Navigation that is fixed
-  .top-bar-section-fixed {
-    position: absolute;
-    top: 0px;
-    #{$opposite-direction}: 0px;
-    width: auto;
-    display: inline-block;
-  }
-
   // Right and Left Navigation that stacked by default
   .top-bar-section {
     #{$default-float}: 0;
     position: relative;
     width: auto;
     @include single-transition($default-float, $topbar-transition-speed);
-    display: block;
 
     ul {
       width: 100%;
       height: auto;
       display: block;
       background: $topbar-dropdown-bg;
-      font-size: $em-base;
+      font-size: $topbar-font-size;
       margin: 0;
     }
 
@@ -222,31 +272,31 @@ $include-html-top-bar-classes: $include-html-classes !default;
         font-size: $topbar-link-font-size;
         font-weight: $topbar-link-weight;
         background: $topbar-dropdown-bg;
-        //added by keith
-        text-decoration: none;
 
         &.button {
           background: $primary-color;
           font-size: $topbar-link-font-size;
-          &.hover {
+           padding-right: $topbar-height / 3;
+           padding-left: $topbar-height / 3;
+          &:hover {
             background: darken($primary-color, 10%);
           }
         }
         &.button.secondary {
           background: $secondary-color;
-          &.hover {
+          &:hover {
             background: darken($secondary-color, 10%);
           }
         }
         &.button.success {
           background: $success-color;
-          &.hover {
+          &:hover {
             background: darken($success-color, 10%);
           }
         }
         &.button.alert {
           background: $alert-color;
-          &.hover {
+          &:hover {
             background: darken($alert-color, 10%);
           }
         }
@@ -254,10 +304,9 @@ $include-html-top-bar-classes: $include-html-classes !default;
       }
 
       // Apply the hover link color when it has that class
-      &.hover > a {
+      &:hover > a {
         background: $topbar-link-bg-hover;
         color: $topbar-link-color-hover;
-        //font-weight: 600; //added by keith
       }
 
       // Apply the active link color when it has that class
@@ -276,7 +325,9 @@ $include-html-top-bar-classes: $include-html-classes !default;
 
       & > a {
         &:after {
-          @include css-triangle($topbar-dropdown-toggle-size, $secondary, $default-float); //rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), $default-float);
+          @if ($topbar-arrows){
+            @include css-triangle($topbar-dropdown-toggle-size, $secondary, $default-float); //modified orignial to work on ie8 by keith
+          }
           margin-#{$opposite-direction}: $topbar-height / 3;
           margin-top: -($topbar-dropdown-toggle-size / 2) - 2;
           position: absolute;
@@ -287,7 +338,7 @@ $include-html-top-bar-classes: $include-html-classes !default;
 
       &.moved { position: static;
         & > .dropdown {
-          visibility: visible;
+          display: block;
         }
       }
     }
@@ -297,7 +348,7 @@ $include-html-top-bar-classes: $include-html-classes !default;
       position: absolute;
       #{$default-float}: 100%;
       top: 0;
-      visibility: hidden;
+      display: none;
       z-index: 99;
 
       li {
@@ -307,6 +358,9 @@ $include-html-top-bar-classes: $include-html-classes !default;
         a {
           font-weight: normal;
           padding: 8px $topbar-height / 3;
+          &.parent-link {
+            font-weight: $topbar-link-weight;
+          }
         }
 
         &.title h5 { margin-bottom: 0;
@@ -316,8 +370,12 @@ $include-html-top-bar-classes: $include-html-classes !default;
             display: block;
           }
         }
+        //added by keith
+        &.empty-label {
+          height: 3px;  
+        }
       }
-
+      
       label {
         padding: 8px $topbar-height / 3 2px;
         margin-bottom: 0;
@@ -326,18 +384,9 @@ $include-html-top-bar-classes: $include-html-classes !default;
         font-weight: $topbar-dropdown-label-font-weight;
         font-size: $topbar-dropdown-label-font-size;
       }
-
-      .empty-label {
-        height: 2px;
-      }
     }
   }
 
-  // Element that controls breakpoint, no need to change this ever
-  .top-bar-js-breakpoint {
-    width: $topbar-breakpoint !important;
-    visibility: hidden;
-  }
   .js-generated { display: block; }
 
 
@@ -355,12 +404,15 @@ $include-html-top-bar-classes: $include-html-classes !default;
 
       input,
       .button {
-        line-height: 2em;
-        font-size: emCalc(14px);
+        font-size: em-calc(14);
         height: 2em;
         padding: 0 10px;
         position: relative;
         top: 8px;
+      }
+
+      .button {
+        line-height: 2em;
       }
 
       &.expanded { background: $topbar-bg; }
@@ -369,26 +421,12 @@ $include-html-top-bar-classes: $include-html-classes !default;
     .contain-to-grid .top-bar {
       max-width: $row-width;
       margin: 0 auto;
+      margin-bottom: $topbar-margin-bottom;
     }
-
-	  // Navigation that is before the toggle
-	  .topbar-before {
-      position: relative;
-	    #{$opposite-direction}: 0;
-	  }
-
-	  // Right and Left Navigation that is fixed
-	  .top-bar-section-fixed {
-      position: relative;
-	    #{$default-float}: 0;
-	    float: #{$opposite-direction};
-	  }
 
     .top-bar-section {
       @include single-transition(none,0,0);
       #{$default-float}: 0 !important;
-      float: #{$opposite-direction} !important;
-      display: inline-block !important;
 
       ul {
         width: auto;
@@ -402,38 +440,44 @@ $include-html-top-bar-classes: $include-html-classes !default;
       }
 
       li {
-        a:not(.button) {
-          padding: 0 $topbar-height / 3;
-          line-height: $topbar-height;
-          background: $topbar-bg;
-          &.hover { background: adjust-color($topbar-dropdown-bg, $lightness: $topbar-link-hover-lightness); }
+        &.hover {
+          > {
+            background: $topbar-link-bg-hover;
+            color: $topbar-link-color-hover;
+            padding-bottom: 5px; //added by keith
+          }
         }
-        .topbar-li-ltie9 {
-          padding: 0 $topbar-height / 3;
+        a:not(.button) {
+          padding: 0 $topbar-height / 15; //modified by keith
+          padding-bottom: 5px; //added by keith
           line-height: $topbar-height;
           background: $topbar-bg;
-          &.hover { background: adjust-color($topbar-dropdown-bg, $lightness: $topbar-link-hover-lightness); }
+          &:hover { background: $topbar-link-bg-hover; }
         }
       }
 
       .has-dropdown {
-        & > a {
-          padding-#{$opposite-direction}: $topbar-height / 3 + 20 !important;
 
-          &:after {
-            @include css-triangle($topbar-dropdown-toggle-size, $secondary, top); //rgba($topbar-dropdown-toggle-color, $topbar-dropdown-toggle-alpha), top);
-            margin-top: -($topbar-dropdown-toggle-size / 2);
-            top: $topbar-height / 2;
+        @if($topbar-arrows){
+
+          & > a {
+            padding-#{$opposite-direction}: $topbar-height / 3 + 20 !important;
+            &:after {
+              @include css-triangle($topbar-dropdown-toggle-size, $secondary, top); //modified orignial to work on ie8 by keith
+              margin-top: -($topbar-dropdown-toggle-size / 2);
+              top: $topbar-height / 2;
+            }
           }
+
         }
 
         &.moved { position: relative;
-          & > .dropdown { visibility: hidden; }
+          & > .dropdown { display: none; }
         }
 
-        &.hover {
+        &.hover, &.not-click:hover {
           & > .dropdown {
-            visibility: visible;
+            display: block;
           }
         }
 
@@ -442,7 +486,8 @@ $include-html-top-bar-classes: $include-html-classes !default;
             &:after {
               border: none;
               content: "\00bb";
-              margin-top: -16px;
+              top: 1em;
+              margin-top: -7px;
               #{$opposite-direction}: 5px;
             }
           }
@@ -467,7 +512,7 @@ $include-html-top-bar-classes: $include-html-classes !default;
 
           label {
             white-space: nowrap;
-            background: lighten($topbar-bg, 5%);
+            background: $topbar-dropdown-label-bg;
           }
 
           // Second Level Dropdowns
@@ -486,7 +531,7 @@ $include-html-top-bar-classes: $include-html-classes !default;
         border-#{$default-float}: $topbar-divider-border-top;
         clear: none;
         height: $topbar-height;
-        width: 0px;
+        width: 0;
       }
 
       .has-form {
@@ -500,7 +545,7 @@ $include-html-top-bar-classes: $include-html-classes !default;
         li .dropdown {
           left: auto;
           right: 0;
-          // padding-top: 5px; //added by keith
+
           li .dropdown { right: 100%; }
         }
       }
@@ -509,7 +554,7 @@ $include-html-top-bar-classes: $include-html-classes !default;
     // Degrade gracefully when Javascript is disabled. Displays dropdown and changes
     // background & text color on hover.
     .no-js .top-bar-section {
-	  ul li {
+          ul li {
         // Apply the hover link color when it has that class
         &:hover > a {
           background: $topbar-link-bg-hover;
@@ -523,14 +568,13 @@ $include-html-top-bar-classes: $include-html-classes !default;
         }
       }
 
-	  .has-dropdown {
+          .has-dropdown {
         &:hover {
           & > .dropdown {
-            visibility: visible;
+            display: block;
           }
         }
-	  }
-	}
+          }
+        }
   }
-
 }

@@ -1,0 +1,78 @@
+// ******************************************
+// Styling for main menu application tiles
+
+.app-tile-row {
+	margin-top: 15px;
+
+	ul {
+		margin: 0 auto;
+		@media screen and (min-width: $small-screen) {
+			padding-left: 5px;
+		}
+		@media screen and (min-width: emCalc(1000px)) {
+			padding-left: 0px;
+		}
+	}
+
+	@include clearfix();
+	
+	.app-tile {
+		padding-top: 25px;
+		border: 1px solid $grayLighter;
+		@include box-shadow(0 0 5px $grayLighter);
+		cursor: pointer;
+		margin-bottom: 5px;
+
+		@media screen and (min-width: $small-screen) {
+			float: left;
+			width: columns(4.87); //48.2
+			margin: 4px;
+		}
+		@media screen and (min-width: emCalc(1000px)) {
+			width: columns(2.5);
+			margin: 3px 3px 3px 4px;
+		}
+		font-size: 3em; //set font size at this level to avoid issue with ie8
+		color: $white;
+		text-align: center;
+		i {
+			display: inline-block;
+			padding-top: 5px;
+		}
+		h4 {
+			font-size: .35em;
+			color: #fff;
+			margin: 0; 
+			line-height: 2.5em; 
+			overflow: hidden; 
+			text-decoration: none; 
+			font-weight: 600; 
+			position: relative; 
+			width: 100%; 
+			text-overflow: ellipsis; 
+			white-space: nowrap; 
+			margin-top: 15px; 
+			padding-left: 1%;
+			margin-right: 10%;
+		}
+		a {
+			display: block;
+			color: #fff;
+		}
+	}
+	.app-tile-effect {
+		border-color: $grayLight;
+		@include box-shadow(0 2px 30px $black);
+	}
+	// will need when we implement removal of tiles
+	// .app-remove {
+	// 	margin: 0;
+	// 	padding: 0;
+	// 	position: relative;
+	// 	margin-top: -25px;
+	// 	width: auto;
+	// 	float: right;
+	// 	display: block;
+	// 	font-size: .35em;
+	// }
+}

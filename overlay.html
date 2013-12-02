@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+      <meta name="author" content="Sherwin-Williams"/>
+      <meta name="robots" content="noindex,nofollow,nosnippet,noarchive,noimageindex"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+      <meta http-equiv="Cache-Control" content="no-cache"/>
+      <meta http-equiv="Cache-Control" content="no-store"/>
+      <meta http-equiv="Pragma" content="no-cache"/>
+      <meta http-equiv="Expires" content="0"/>
+      <meta http-equiv="cleartype" content="on"/>
+      <title>Menu</title>
+      <link href="/css/base.css" rel="stylesheet"/>
+      <style type="text/css">
+        [role="main"] {
+          position: relative;
+          width: 100%;
+          max-width: 1080px;
+          margin: 0 auto;
+          top: 50px;
+        }
+        .overlay {
+          *zoom: 1;
+          position: absolute; 
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 10000; 
+          max-width: 1080px; 
+          margin: 0 auto; 
+          width: 100%;
+          display: block;
+          font-weight: 600;
+          color: #fff;
+        }
+        .overlay:before,
+        .overlay:after {
+          display: table;
+          content: "";
+          line-height: 0;
+        }
+        .overlay:after {
+          clear: both;
+        }
+
+        .close-overlay {
+          display: inline-block;
+          position: absolute;
+          top: 12px;
+          right: 0;
+          cursor: pointer;
+        }
+
+        .overlay div {
+          display: inline-block;
+          position: relative;
+          border: 1px solid #fff;
+          padding: 10px;
+          background: #3498db;
+          opacity: 1;
+          border-radius: 5px;
+        }
+
+        .overlay .folder-msg {
+          top: 75px;
+          width: 51%;
+          float: left;
+          margin-left: 10px;
+        }
+
+        .overlay .region-msg {
+          top: 75px;
+          width: 40%;
+          float: right;
+          margin-right: 10px;
+        }
+
+        .overlay .submit-msg {
+          top: 410px;
+          width: 40%;
+        }
+
+        .mask {
+          position: absolute; 
+          top: 0px; 
+          width: 100%; 
+          height: 100%; 
+          opacity: 0.55; 
+          z-index: 9998; 
+          background-color: black;
+        }
+      </style>
+  </head>
+  <body>
+    <div role="main">
+      <section id="body-content" class="body-content well" role="region" aria-labelledby="heading">
+        <h2>HEARS Application</h2>
+        <section class="well inner-well">
+          <h3>Application Content</h3>
+        </section>
+      </section>
+    </div>
+    <div id="overlay" class="overlay">
+      <span id="close-overlay" class="close-overlay" onclick="removeOverlay();" ontouchstart="removeOverlay();">
+        <i class="icon-cancel-circled"></i>
+      </span>
+      <div class="folder-msg">
+        <span>After a search add documents to view/fax/email at any point in time.  This mechanism replaces Multiple Document Finder.</span>
+      </div>
+      <div class="region-msg">
+        <span>Use Document Finder in your native language</span>
+      </div>
+      <div class="submit-msg">
+        <span>Complete form and click Search to see results</span>
+      </div>
+    </div>
+    <div id="mask" class="mask"></div>
+    <script type="text/javascript">
+      function removeOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('mask').style.display = 'none';
+      }
+    </script>
+  </body>
+</html>

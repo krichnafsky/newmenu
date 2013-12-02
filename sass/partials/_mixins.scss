@@ -263,7 +263,7 @@
 @mixin gradientBar($primaryColor, $secondaryColor, $textColor: #fff, $textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
   color: $textColor;
   // text-shadow: $textShadow;
-  background-color: mix($primaryColor, $secondaryColor, 62.5%);
+  background-color: $primaryColor; // mix($primaryColor, $secondaryColor, 62.5%);
   // @include gradient-vertical($primaryColor, $secondaryColor);
   border-color: $secondaryColor $secondaryColor darken($secondaryColor, 15%);
   border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fade-in(rgba(0,0,0,.1), 0.15);
@@ -332,6 +332,22 @@
 
 // COMPONENT MIXINS
 // --------------------------------------------------
+
+// Alerts
+// -------------------------
+@mixin alert-variant($background, $border, $text-color) {
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+  .alert-link {
+    color: darken($text-color, 10%);
+  }
+}
+
 
 // Horizontal dividers
 // -------------------------
@@ -446,16 +462,6 @@
 //
 
 $experimental: true !default;
-
-// We use this to control border radius.
-@mixin radius($radius:$global-radius) {
-  @if $radius {
-    @if $experimental {
-      -webkit-border-radius: $radius;
-    }
-    border-radius: $radius;
-  }
-}
 
 // We use this to create equal side border radius on elements.
 @mixin side-radius($side, $radius) {
@@ -583,3 +589,4 @@ $experimental: true !default;
     border-color: $glowing-effect-color;
   }
 }
+

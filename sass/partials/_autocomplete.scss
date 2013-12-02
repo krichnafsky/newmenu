@@ -1,0 +1,39 @@
+// ******************************************
+// Styling for jQuery autocomplete
+
+.acResults {
+	padding: 4px 0;
+	border: 1px solid WindowFrame;
+	@include border-radius(5px);
+	@include box-shadow(0 5px 10px rgb(122, 160, 179)); //rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+	background-color: Window;
+	overflow: hidden;
+}
+
+.acResults ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-position: outside;
+	list-style: none;
+}
+
+.acResults ul li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: pointer;
+	display: block;
+	font-size: 12px;
+	overflow: hidden;
+}
+
+.acLoading {
+	background : url(../img/indicator.gif) right center no-repeat;
+}
+
+.acSelect {
+	background-color: #59A2F6;
+	color: HighlightText;
+}

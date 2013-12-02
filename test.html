@@ -2,13 +2,32 @@
 <html>
 	<head>
 		<title>Box Shadow</title>
-		
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0"/>
+		<meta name="author" content="Sherwin-Williams"/>
+		<meta name="robots" content="noindex,nofollow,nosnippet,noarchive,noimageindex"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<meta http-equiv="Cache-Control" content="no-store"/>
+		<meta http-equiv="Pragma" content="no-cache"/>
+		<meta http-equiv="Expires" content="0"/>
+		<meta http-equiv="cleartype" content="on"/>
+		<title>Menu</title>
+		<link href="/css/base.css" rel="stylesheet"/>
+		<!--[if lt IE 9]>
+			<link href="/css/baseIE8.css" rel="stylesheet"/>
+		<![endif]-->
+		<script src="/js/modernizr-2.6.2-min.js"></script>
 		<style>
+			ul li {
+				display: inline-block;
+			}
 			.box {
 				height: 150px;
 				width: 300px;
-				margin: 20px;
+				margin: 20px 20px 20px 0px;
 				border: 1px solid #ccc;
+				background-color: #fff;
 			}
 			
 			.top {
@@ -33,10 +52,52 @@
 		</style>
 	</head>
 	<body>
-		<div class="box top"></div>
-		<div class="box right"></div>
-		<div class="box bottom"></div>
-		<div class="box left"></div>
-		<div class="box all"></div>
+		<div class="main-container">
+			<ul>
+				<li><div class="box top"></div></li>
+				<li><div class="box right"></div></li>
+				<li><div class="box bottom"></div></li>
+				<li><div class="box left"></div></li>
+				<li><div class="box all"></div></li>
+			</ul>
+			<ul>
+				<li><button id="submitButton" class="btn btn-primary" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-info" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-success" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-warning" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-danger" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-inverse" type="submit" title="Select to search">Submit</button></li>
+			</ul>
+			<ul>
+				<li><button id="submitButton" class="btn btn-primary" disabled="disabled" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-info" disabled="disabled" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-success" disabled="disabled" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-warning" disabled="disabled" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-danger" disabled="disabled" type="submit" title="Select to search">Submit</button></li>
+				<li><button id="submitButton" class="btn btn-inverse" disabled="disabled" type="submit" title="Select to search">Submit</button></li>
+			</ul>
+			<ul>
+				<li>
+					<p class="alert alert-warning">
+						<button type="button" class="close icon-cancel-1" style="font-size: 1em;" title="Select to close" ontouchstart="$(this).parent().addClass('hide');" onclick="$(this).parent().addClass('hide');">&nbsp;</button>Note:&nbsp;<span class="required">∗</span>&nbsp;Denotes required field
+					</p>
+				</li>
+				<li>
+					<p class="alert alert-error">
+						<button type="button" class="close icon-cancel-1" style="font-size: 1em;" title="Select to close" ontouchstart="$(this).parent().addClass('hide');" onclick="$(this).parent().addClass('hide');">&nbsp;</button>Note:&nbsp;<span class="required">∗</span>&nbsp;Denotes required field
+					</p>
+				</li>
+				<li>
+					<p class="alert alert-success">
+						<button type="button" class="close icon-cancel-1" style="font-size: 1em;" title="Select to close" ontouchstart="$(this).parent().addClass('hide');" onclick="$(this).parent().addClass('hide');">&nbsp;</button>Note:&nbsp;<span class="required">∗</span>&nbsp;Denotes required field
+					</p>
+				</li>
+				<li>
+					<p class="alert alert-info">
+						<button type="button" class="close icon-cancel-1" style="font-size: 1em;" title="Select to close" ontouchstart="$(this).parent().addClass('hide');" onclick="$(this).parent().addClass('hide');">&nbsp;</button>Note:&nbsp;<span class="required">∗</span>&nbsp;Denotes required field
+					</p>
+				</li>
+			</ul>
+		</div>
 	</body>
 </html>

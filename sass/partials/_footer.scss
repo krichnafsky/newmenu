@@ -1,14 +1,25 @@
-.site-footer {
-  font-size: .95em;
-  left:0px;
-  bottom:0px;
-  width:100%;
+// ******************************************
+// Styling for main footer
+
+footer, .footer-container {
+  background: $flat-blue;
+  text-align: center;
+  list-style: none;
+  @media screen and (min-width: $small-to-medium-screen) {
+    text-align: left;
+  }
+}
+
+footer {
+  position: relative;
+  @media screen and (min-width: $medium-screen) {
+    position: fixed;
+  }
+  left: 0;
+  bottom: 0;
+  width: 100%;
   color: $white;
   padding: 7px 10px;
-  background-color: mix($topbarBackgroundHighlight, $topbarBackground, 62.5%);
-  @include box-shadow(0 1px 4px rgba(0,0,0,.065));
-  // Prevent floats from breaking the navbar
-  @include clearfix();
   & p {
     margin: 0;
   }
@@ -17,17 +28,72 @@
   }
 }
 
-/* IE 6 */
-* html .site-footer {
-  position:fixed;
-  top:expression((0-(site-footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
-}
+// * html [role="footer"] {
+//   position:fixed;
+//   top:expression((0-(site-footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+// }
 
 .site-footer-links {
-  font-size: .95em;
-  margin-right: 2%;
+  font-size: 1.2em;
   margin: 0 auto;
+  line-height: 0px;
+  padding: 10px 0px;
+
   & li {
-    display: inline;
+    position: relative;
+    display: inline-block;
+    margin-right: -4px;
+    a {
+      display: block;
+      margin: 0px 20px;
+      padding-right: 2px;
+      @media screen and (min-width: $small-to-medium-screen) {
+        margin-top: -18px;
+        padding-right: 0px;
+      }
+      width: 37px;
+      height: 37px;
+      position: relative;
+      text-align: center;
+      line-height: 2.438em;
+      background-color: $secondary;
+      color: darken($flat-silver, 10%);
+      @include border-radius(50%);
+      &:hover {
+        color: $anchor-font-color-hover;
+      }
+      i {
+        display: inline-block;
+      }
+    }
+  }
+  @media screen and (min-width: $small-to-medium-screen) {
+    margin-right: 2%;
+  }
+}
+
+@media screen and (min-width: $small-to-medium-screen) {
+  .footer-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: $main-max-width;
+    margin: 0 auto;
+    padding: 0;
+    // this is a fix for IE7 and 8 since they do not understand the :last-child pseudo-class selector
+    > p + p {
+      width: columns(6);
+      float: left;
+      margin-right: gutter();
+    }
+    .site-footer-links {
+      @include last;
+      padding: 0;
+      li:first-child {
+        padding-left: 0;
+      }
+      li {
+        padding: 0 2px;
+      }
+    }
   }
 }

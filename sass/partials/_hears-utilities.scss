@@ -1,0 +1,61 @@
+// ******************************************
+// Common HEARS utility classes
+
+@import "modules/variables";
+
+// Flat background colors
+.flat-blue { background-color: $flat-blue; }
+.flat-blue-darken { background-color: darken($flat-blue, 10%) };
+.flat-dark-blue { background-color: $flat-dark-blue; } 
+.flat-dark-blue-darken { background-color: darken($flat-dark-blue, 10%) };
+.flat-green { background-color: $flat-green; } 
+.flat-green-darken { background-color: darken($flat-green, 10%) };
+.flat-yellow { background-color: $flat-yellow; }
+.flat-yellow-darken { background-color: darken($flat-yellow, 10%) };
+.flat-orange { background-color: $flat-orange; } 
+.flat-orange-darken { background-color: darken($flat-orange, 10%) };
+.flat-red { background-color: $flat-red; } 
+.flat-red-darken { background-color: darken($flat-red, 10%) };
+.flat-silver { background-color: $flat-silver; } 
+.flat-silver-darken { background-color: darken($flat-silver, 10%) };
+
+// Bold font weight
+.bold {
+	font-weight: bold;
+}
+
+// Separator
+.separator {
+	border-top: 1px solid #e5e5e5;
+	padding-top: 1em;
+	margin-top: 1em;
+}
+
+// Required indicators
+span.required {
+  color: darken($flat-red, 20%);
+}
+
+label.required:after {
+  content: "\00A0*";
+  color: darken($flat-red, 20%);
+}
+
+// Clearing floats
+.clearfix {
+  @include clearfix();
+}
+
+// Accessible yet invisible text
+.hide-text {
+  @include hide-text();
+}
+
+// Uses box-sizing mixin, so must be defined here
+.input-block-level {
+  @include input-block-level();
+}
+
+.cursorPointer {
+  cursor: $cursor-pointer-value;
+}

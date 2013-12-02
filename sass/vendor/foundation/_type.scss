@@ -4,43 +4,43 @@
 $include-html-type-classes: $include-html-classes !default;
 
 // We use these to control header font styles
-$header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default;
+$header-font-family: $sansFontFamily;
 $header-font-weight: bold !default;
-$header-font-style: normal !default;
-$header-font-color: #222 !default;
-$header-line-height: 1.4 !default;
-$header-top-margin: .2em !default;
-$header-bottom-margin: .5em !default;
-$header-text-rendering: optimizeLegibility !default;
+$header-font-style: normal;
+$header-font-color: $textColor; //#222;
+$header-line-height: 1.4;
+$header-top-margin: 0em; //.2em;
+$header-bottom-margin: .2em; //.5em;
+$header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: emCalc(44px) !default;
-$h2-font-size: emCalc(37px) !default;
-$h3-font-size: emCalc(27px) !default;
-$h4-font-size: emCalc(23px) !default;
-$h5-font-size: emCalc(18px) !default;
-$h6-font-size: 1em !default;
+$h1-font-size: emCalc(44px);
+$h2-font-size: emCalc(37px);
+$h3-font-size: emCalc(27px);
+$h4-font-size: emCalc(23px);
+$h5-font-size: emCalc(18px);
+$h6-font-size: 1em;
 
 // These control how subheaders are styled.
-$subheader-line-height: 1.4 !default;
-$subheader-font-color: lighten($header-font-color, 30%) !default;
-$subheader-font-weight: 300 !default;
-$subheader-top-margin: .2em !default;
-$subheader-bottom-margin: .5em !default;
+$subheader-line-height: 1.4;
+$subheader-font-color: lighten($header-font-color, 30%);
+$subheader-font-weight: 300;
+$subheader-top-margin: .2em;
+$subheader-bottom-margin: .5em;
 
 // A general <small> styling
-$small-font-size: 60% !default;
-$small-font-color: lighten($header-font-color, 30%) !default;
+$small-font-size: 60%;
+$small-font-color: lighten($header-font-color, 30%);
 
 // We use these to style paragraphs
-$paragraph-font-family: inherit !default;
-$paragraph-font-weight: normal !default;
-$paragraph-font-size: 1em !default;
-$paragraph-line-height: 1.6 !default;
-$paragraph-margin-bottom: emCalc(20px) !default;
-$paragraph-aside-font-size: emCalc(14px) !default;
-$paragraph-aside-line-height: 1.35 !default;
-$paragraph-aside-font-style: italic !default;
+$paragraph-font-family: inherit;
+$paragraph-font-weight: normal;
+$paragraph-font-size: 1em;
+$paragraph-line-height: 1.6;
+$paragraph-margin-bottom: emCalc(20px);
+$paragraph-aside-font-size: emCalc(14px);
+$paragraph-aside-line-height: 1.35;
+$paragraph-aside-font-style: italic;
 $paragraph-text-rendering: optimizeLegibility !default;
 
 // We use these to style <code> tags
@@ -100,7 +100,6 @@ $microformat-abbr-padding: 0 emCalc(1px) !default;
 // We use this to control abbr font styles
 $microformat-abbr-font-weight: bold !default;
 $microformat-abbr-font-decoration: none !default;
-
 
 //
 // Typography Placeholders

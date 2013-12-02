@@ -1,0 +1,57 @@
+@import "compass";
+
+// Core variables and mixins
+@import "modules/variables"; // Modify this for custom colors, font-sizes, etc
+@import "partials/mixins";
+
+// overrides for foundation _top-bar
+.title-area {
+  max-width: 150px !important;
+  img {
+    max-width: 225px;
+    @media screen and (min-width: $large-screen){
+      max-width: 153px;
+    }
+  }
+  span.icon-fix {
+    font-size: 1.5em;
+    i {
+      margin-top: 10px;
+    }
+  }
+}
+
+.has-dropdown {
+  .heading {
+    padding: 6px 3px 15px 3px !important;
+    span.icon-fix {
+      font-size: 1.4em;
+      i {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+// end overrides for foundation _top-bar
+
+.app-tile-effect {
+  border-top: 1px solid $flat-silver !important; 
+  border-right: 1px ridge $flat-silver !important; 
+  border-bottom: 1px ridge $flat-silver !important; 
+  border-left: 1px solid $flat-silver !important;
+  font-weight: bold;
+}
+
+// footer overrides
+.site-footer-links {
+  & li {
+    a {
+      background-color: $flat-blue;
+      color: $white;
+      &:hover{
+        color: $white;
+      }
+    }
+  }
+}
+// end footer overrides
